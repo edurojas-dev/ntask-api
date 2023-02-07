@@ -34,7 +34,7 @@ module.exports = (app) => {
         const { id } = req.params
         const where = { id }
         await Tasks.update(req.body, { where });
-        res.sendStatus(404)
+        res.json({msg: "tarefa atualiza!"})
       } catch (error) {
         res.status(412).json({erro: error.message});
       }
